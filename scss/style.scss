@@ -1,45 +1,57 @@
+@mixin uppercaseStyle($text-transform, $line-height, $color) {
+  text-transform: $text-transform;
+  opacity: 0.8;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: $line-height;
+  color: $color;
+}
+
+%hrStyle {
+  width: 60%;
+  line-height: 10px;
+  opacity: 0.7;
+}
+@import "slider";
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
 }
-.swiper-container {
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-  .swiper-slide {
-    background-size: cover !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .slide-text {
-      color: white;
-      font-family: "Roboto", sans-serif;
-      text-align: center;
-
-      p {
-        text-transform: uppercase;
-        opacity: 0.8;
-        font-weight: 300;
-        letter-spacing: 2px;
-        line-height: 50px;
-      }
-      hr {
-        width: 60%;
-        line-height: 10px;
-        opacity: 0.7;
-      }
-      h1 {
-        font-size: 5em;
-        font-weight: 400;
-      }
-    }
+.some-examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  padding: 5%;
+  text-align: center;
+  margin: 5%;
+  .examples {
+    background-color: #ffffff;
   }
-  .swiper-pagination-bullet {
-    background-color: grey;
-
-    .swiper-pagination-bullet-active {
-      opacity: 0.7;
-      background: var(--swiper-pagination-color, var(--swiper-theme-color));
-    }
+  .examples-img {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 300px;
+  }
+  h4 {
+    @include uppercaseStyle(uppercase, 20px, grey);
+  }
+  h2 {
+    font-weight: 300;
+  }
+  p {
+    @include uppercaseStyle(none, 20px, grey);
+    margin: 20px 15px;
+  }
+  hr {
+    @extend %hrStyle;
+    color: grey;
+  }
+  button {
+    padding: 15px;
+    border: solid 2px grey;
+    text-transform: uppercase;
+    background: #ffffff;
+    margin: 30px 0;
   }
 }

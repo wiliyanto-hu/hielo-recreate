@@ -6,23 +6,28 @@
   line-height: $line-height;
   color: $color;
 }
-
-%hrStyle {
-  width: 60%;
-  line-height: 10px;
-  opacity: 0.7;
+@mixin hrStyle($width, $line-height) {
+  width: $width;
+  line-height: $line-height;
+  opacity: 0.4;
 }
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @import "slider";
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f7f7f7;
+  background-color: #ebe6e6;
 }
 .some-examples {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
-  padding: 5%;
+
   text-align: center;
   margin: 5%;
   .examples {
@@ -34,7 +39,8 @@ body {
     height: 300px;
   }
   h4 {
-    @include uppercaseStyle(uppercase, 20px, grey);
+    @include uppercaseStyle(uppercase, 10px, grey);
+    font-size: 0.9em;
   }
   h2 {
     font-weight: 300;
@@ -44,7 +50,7 @@ body {
     margin: 20px 15px;
   }
   hr {
-    @extend %hrStyle;
+    @include hrStyle(40%, 10px);
     color: grey;
   }
   button {
@@ -53,5 +59,75 @@ body {
     text-transform: uppercase;
     background: #ffffff;
     margin: 30px 0;
+  }
+}
+.parallax {
+  @extend %flexcenter;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  height: 35vh;
+  width: 100%;
+
+  &-text {
+    color: white;
+    text-align: center;
+  }
+  p {
+    @include uppercaseStyle(uppercase, 15px, white);
+  }
+  hr {
+    @include hrStyle(90%, 15px);
+  }
+  h2 {
+    font-weight: 300;
+  }
+}
+.gallery {
+  margin: 10% 5%;
+  text-align: center;
+  p {
+    @include uppercaseStyle(uppercase, 15px, rgb(46, 44, 44));
+  }
+  hr {
+    @include hrStyle(40%, 15px);
+  }
+  h2 {
+    font-weight: 300;
+  }
+}
+
+.gallery-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(200px, 300px);
+  gap: 30px;
+
+  .photos {
+    padding: 15px;
+    margin: 0;
+    background-color: white;
+  }
+  .photos-bg {
+    background-size: cover !important;
+    height: 100%;
+  }
+}
+footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: white;
+  background: black;
+  text-align: center;
+  height: 25vh;
+  margin: 0;
+
+  i {
+    margin: 20px 10px;
+
+    &:hover {
+      color: #c4bebe;
+      cursor: pointer;
+    }
   }
 }

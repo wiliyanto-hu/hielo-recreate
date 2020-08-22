@@ -23,6 +23,32 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #ebe6e6;
 }
+nav {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  align-items: center;
+
+  h3 {
+    margin-left: 3%;
+    font-weight: 300;
+  }
+  a {
+    margin-right: 5%;
+    color: white;
+    text-decoration: none;
+  }
+}
+.scrolled {
+  transition: all 0.5s;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  height: 50px !important;
+}
 .some-examples {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,5 +155,23 @@ footer {
       color: #c4bebe;
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .some-examples {
+    grid-template-columns: 1fr;
+    grid-auto-rows: (200px, auto);
+    row-gap: 30px;
+  }
+  .parallax {
+    p {
+      font-size: 13px;
+    }
+  }
+  .gallery-photos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
   }
 }

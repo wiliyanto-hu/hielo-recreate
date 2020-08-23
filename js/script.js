@@ -1,6 +1,20 @@
 const navbar = document.querySelector("nav");
 const slide = document.querySelector(".swiper-container");
 const scrolled = document.querySelector(".scrolled");
+const menu = document.querySelector(".menu");
+const sidebar = document.querySelector(".sidebar");
+const closed = document.querySelector("#close");
+
+menu.addEventListener("click", (e) => {
+  sidebar.classList.add("sidebar-toggle");
+  /* sidebar.style.width = "30vw";
+  sidebar.style.display = "block"; */
+  e.preventDefault();
+});
+
+closed.addEventListener("click", () => {
+  sidebar.classList.remove("sidebar-toggle");
+});
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > window.innerHeight / 2) {

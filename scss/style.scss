@@ -39,7 +39,6 @@ body {
   height: 100vh;
   background-color: black;
   z-index: 101;
-  visibility: hidden;
 
   li,
   hr {
@@ -60,6 +59,8 @@ body {
   }
 
   #close {
+    transition: opacity 0.5s;
+    opacity: 0;
     float: right;
     margin: 10px 10px;
     cursor: pointer;

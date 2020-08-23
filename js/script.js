@@ -7,13 +7,14 @@ const closed = document.querySelector("#close");
 
 menu.addEventListener("click", (e) => {
   sidebar.classList.add("sidebar-toggle");
-  /* sidebar.style.width = "30vw";
-  sidebar.style.display = "block"; */
+
+  closed.style.opacity = 1;
   e.preventDefault();
 });
 
 closed.addEventListener("click", () => {
   sidebar.classList.remove("sidebar-toggle");
+  closed.style.opacity = 0;
 });
 
 document.addEventListener("scroll", () => {

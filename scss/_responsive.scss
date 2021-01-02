@@ -1,0 +1,26 @@
+@media (max-width: 900px) {
+  .slide-text {
+    h1 {
+      font-size: 3em !important;
+    }
+    p {
+      font-size: 1em !important;
+    }
+  }
+
+  .some-examples {
+    grid-template-columns: 1fr;
+    grid-auto-rows: (200px, auto);
+    row-gap: 30px;
+  }
+  .parallax {
+    p {
+      font-size: 13px;
+    }
+  }
+  .gallery-photos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+}

@@ -1,0 +1,18 @@
+@mixin uppercaseStyle($text-transform, $line-height, $color) {
+  text-transform: $text-transform;
+  opacity: 0.8;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: $line-height;
+  color: $color;
+}
+@mixin hrStyle($width, $line-height) {
+  width: $width;
+  line-height: $line-height;
+  opacity: 0.4;
+}
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

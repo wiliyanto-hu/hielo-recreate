@@ -5,6 +5,10 @@ const menu = document.querySelector(".menu");
 const sidebar = document.querySelector(".sidebar");
 const closed = document.querySelector("#close");
 
+/* document.addEventListener("DOMContentLoaded", () => {
+  slide.style.opacity = 1;
+});
+ */
 menu.addEventListener("click", (e) => {
   sidebar.classList.add("sidebar-toggle");
 
